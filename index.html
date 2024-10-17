@@ -10,6 +10,26 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap" rel="stylesheet">
   <style>
+
+
+
+footer {
+  text-align: center;
+padding-top: 20px;
+
+
+}
+
+footer a img {
+  max-width: 40px; /* Adjust the size of the image */
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+footer a img:hover {
+  transform: scale(1.1);
+}
   
   #background-video {
               position: fixed;
@@ -282,7 +302,7 @@
   justify-content: center;
   z-index: 1000;
   opacity: 1;
-  transition: opacity 700ms ease-out, visibility 0s linear 700ms;
+  transition: opacity 600ms ease-out, visibility 0s linear 700ms;
 }
 
 body.loaded #loading-overlay {
@@ -491,7 +511,12 @@ body.loaded #loading-overlay {
         </div>
       </div>
     </div>
-  
+    <footer>
+      <a href="https://x.com/AxelToInfinity" target="_blank">
+        <img src="x.png" alt="X logo">
+      </a>
+    </footer>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.1/fabric.min.js"></script>
     <script>
   const overlays = [
