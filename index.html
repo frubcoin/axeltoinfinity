@@ -458,49 +458,7 @@ body.loaded #loading-overlay {
   }
 }
     </style>
-    <div id="loading-overlay">
-      <video id="loader-background-video" autoplay muted loop>
-        <source src="bg.webm" type="video/webm">
-        Your browser does not support the video tag.
-      </video>
-      <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-    </div>
-<script>document.addEventListener('DOMContentLoaded', function() {
-  const imageSources = [
-    'logo.png',
-    'omb.png',
-    'ninja.png',
-    'pup.png',
-    'frog.png',
-    'ba.png'
-  ];
-
-  let loadedImages = 0;
-  const totalImages = imageSources.length;
-
-  function imageLoaded() {
-    loadedImages++;
-    if (loadedImages === totalImages) {
-      // Delay before adding the loaded class
-      setTimeout(() => {
-        document.body.classList.add('loaded');
-      }, 700); // Delay the fade-out by 700ms
-    }
-  }
-
-  imageSources.forEach(src => {
-    const img = new Image();
-    img.src = src;
-    img.onload = imageLoaded;
-    img.onerror = imageLoaded;
-  });
-
-  const video = document.getElementById('background-video');
-  video.onloadeddata = function() {
-    imageLoaded();
-  };
-});
-</script>
+    
 
     <div class="blur-overlay"></div>
     <video id="background-video" autoplay muted loop>
