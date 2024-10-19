@@ -10,29 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap" rel="stylesheet">
   <style>
-/* Custom scrollbar styles */
-::-webkit-scrollbar {
-  width: 12px; /* Width of the scrollbar */
-}
 
-::-webkit-scrollbar-track {
-  background: #f8e3f8; /* Background of the scrollbar track */
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #ec90ff; /* Scrollbar thumb color */
-  border-radius: 10px; /* Roundness of the scrollbar thumb */
-  border: 2px solid #afedef; /* Border around the scrollbar thumb */
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background-color: #cf7ae0; /* Scrollbar thumb color when hovered */
-}
-
-* {
-  scrollbar-width: thin;
-  scrollbar-color: #ec90ff #f8e3f8;
-}
 
 
 footer {
@@ -44,9 +22,12 @@ padding-top: 20px;
 
 footer a img {
   max-width: 40px; /* Adjust the size of the image */
+ padding-left: 15px;
+ padding-right: 15px;
   height: auto;
   cursor: pointer;
   transition: transform 0.2s;
+
 }
 
 footer a img:hover {
@@ -311,27 +292,11 @@ footer a img:hover {
   </head>
   <body>
     <style>
-      /* Loading overlay */
-      #loading-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-  opacity: 1;
-  transition: opacity 600ms ease-out, visibility 0s linear 700ms;
-}
 
-body.loaded #loading-overlay {
-  opacity: 0; /* Fades out smoothly */
-  visibility: hidden; /* Hides after the opacity transition completes */
-  transition: opacity 700ms ease-out, visibility 0s linear 700ms;
-}
+     
+      
+
+      
 #background-video {
   position: fixed;
   top: 0;
@@ -341,127 +306,34 @@ body.loaded #loading-overlay {
   object-fit: cover;
   z-index: -2;
 }
-/* Video for background in loader */
-#loader-background-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1; /* Stay behind the loader */
- filter: blur(15px) grayscale(60%);
-}
+
       
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+}
 
+::-webkit-scrollbar-track {
+  background: #f8e3f8; /* Background of the scrollbar track */
+}
 
+::-webkit-scrollbar-thumb {
+  background-color: #ec90ff; /* Scrollbar thumb color */
+  border-radius: 10px; /* Roundness of the scrollbar thumb */
+  border: 2px solid #afedef; /* Border around the scrollbar thumb */
+}
 
-      /* Add your other styles here */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #cf7ae0; /* Scrollbar thumb color when hovered */
+}
 
-      .lds-roller {
-  /* change color here */
-  color: rgb(213, 22, 252, 0.5);
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #ec90ff #f8e3f8;
+}
 
-  
-  
-}
-.lds-roller,
-.lds-roller div,
-.lds-roller div:after {
-  box-sizing: border-box;
-}
-.lds-roller {
-  display: inline-block;
-  position: relative;
-  width: 80px;
-  height: 80px;
-}
-.lds-roller div {
-  animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  transform-origin: 40px 40px;
-}
-.lds-roller div:after {
-  content: " ";
-  display: block;
-  position: absolute;
-  width: 7.2px;
-  height: 7.2px;
-  border-radius: 50%;
-  background: currentColor;
-  margin: -3.6px 0 0 -3.6px;
-}
-.lds-roller div:nth-child(1) {
-  animation-delay: -0.036s;
-}
-.lds-roller div:nth-child(1):after {
-  top: 62.62742px;
-  left: 62.62742px;
-}
-.lds-roller div:nth-child(2) {
-  animation-delay: -0.072s;
-}
-.lds-roller div:nth-child(2):after {
-  top: 67.71281px;
-  left: 56px;
-}
-.lds-roller div:nth-child(3) {
-  animation-delay: -0.108s;
-}
-.lds-roller div:nth-child(3):after {
-  top: 70.90963px;
-  left: 48.28221px;
-}
-.lds-roller div:nth-child(4) {
-  animation-delay: -0.144s;
-}
-.lds-roller div:nth-child(4):after {
-  top: 72px;
-  left: 40px;
-}
-.lds-roller div:nth-child(5) {
-  animation-delay: -0.18s;
-}
-.lds-roller div:nth-child(5):after {
-  top: 70.90963px;
-  left: 31.71779px;
-}
-.lds-roller div:nth-child(6) {
-  animation-delay: -0.216s;
-}
-.lds-roller div:nth-child(6):after {
-  top: 67.71281px;
-  left: 24px;
-}
-.lds-roller div:nth-child(7) {
-  animation-delay: -0.252s;
-}
-.lds-roller div:nth-child(7):after {
-  top: 62.62742px;
-  left: 17.37258px;
-}
-.lds-roller div:nth-child(8) {
-  animation-delay: -0.288s;
-}
-.lds-roller div:nth-child(8):after {
-  top: 56px;
-  left: 12.28719px;
-}
-@keyframes lds-roller {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
     </style>
-    <div id="loading-overlay">
-      <video id="loader-background-video" autoplay muted loop>
-        <source src="bg.webm" type="video/webm">
-        Your browser does not support the video tag.
-      </video>
-      <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-    </div>
+
 <script>document.addEventListener('DOMContentLoaded', function() {
   const imageSources = [
     'logo.png',
@@ -535,7 +407,10 @@ body.loaded #loading-overlay {
     </div>
     <footer>
       <a href="https://x.com/AxelToInfinity" target="_blank">
-        <img src="x.png" alt="X logo">
+        <img src="x2.png" alt="X logos">
+      </a>
+      <a href="https://magiceden.us/runes/AXEL%E2%80%A2TO%E2%80%A2INFINITY" target="_blank">
+        <img src="me.png" alt="MagicEden logo">
       </a>
     </footer>
     
